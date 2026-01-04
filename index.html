@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grupo VIP WhatsApp</title>
+
+  <style>
+    :root {
+      --preto: #0b0b0b;
+      --dourado: #d4af37;
+      --dourado-escuro: #b8962e;
+      --branco: #ffffff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background: radial-gradient(circle at top, #1a1a1a, #000);
+      color: var(--branco);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .container {
+      max-width: 420px;
+      width: 100%;
+      padding: 28px 24px 36px;
+      background: linear-gradient(180deg, #0e0e0e, #050505);
+      border: 1px solid rgba(212, 175, 55, 0.25);
+      border-radius: 18px;
+      text-align: center;
+      box-shadow: 0 0 40px rgba(212, 175, 55, 0.15);
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: rgba(212, 175, 55, 0.15);
+      color: var(--dourado);
+      font-size: 12px;
+      letter-spacing: 1px;
+      margin-bottom: 14px;
+    }
+
+    .grupo-foto {
+      margin: 12px 0 20px;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid rgba(212, 175, 55, 0.35);
+      box-shadow: 0 0 25px rgba(212, 175, 55, 0.2);
+    }
+
+    .grupo-foto img {
+      width: 100%;
+      display: block;
+    }
+    }
+
+    h1 {
+      font-size: 26px;
+      font-weight: 800;
+      margin-bottom: 12px;
+      line-height: 1.2;
+    }
+
+    h1 span {
+      color: var(--dourado);
+    }
+
+    p {
+      font-size: 15px;
+      opacity: 0.9;
+      margin-bottom: 22px;
+    }
+
+    .contador {
+      margin: 18px auto 28px;
+      padding: 14px;
+      border-radius: 12px;
+      background: rgba(212, 175, 55, 0.1);
+      border: 1px dashed rgba(212, 175, 55, 0.4);
+    }
+
+    .contador small {
+      display: block;
+      font-size: 12px;
+      opacity: 0.8;
+      margin-bottom: 6px;
+    }
+
+    .tempo {
+      font-size: 22px;
+      font-weight: bold;
+      color: var(--dourado);
+      letter-spacing: 1px;
+    }
+
+    .btn {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      padding: 18px 20px;
+      font-size: 18px;
+      font-weight: bold;
+      text-decoration: none;
+      color: #000;
+      background: linear-gradient(135deg, var(--dourado), var(--dourado-escuro));
+      border-radius: 14px;
+      box-shadow: 0 10px 25px rgba(212, 175, 55, 0.45);
+      transition: transform 0.2s ease;
+      animation: float 2.4s ease-in-out infinite;
+      z-index: 2;
+    }
+
+    .btn::before {
+      content: '';
+      position: absolute;
+      inset: -6px;
+      border-radius: 18px;
+      background: radial-gradient(circle, rgba(212,175,55,0.55), transparent 60%);
+      opacity: 0.7;
+      filter: blur(8px);
+      z-index: -1;
+      animation: glow 1.8s ease-in-out infinite;
+    }
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 0 #7c6520, 0 25px 40px rgba(212, 175, 55, 0.5);
+    }
+
+    .btn:active {
+      transform: translateY(4px);
+      box-shadow: 0 4px 0 #7c6520;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+      100% { transform: translateY(0); }
+    }
+
+    @keyframes glow {
+      0% { opacity: 0.4; }
+      50% { opacity: 0.85; }
+      100% { opacity: 0.4; }
+    }
+      50% { box-shadow: 0 10px 0 #7c6520, 0 0 30px rgba(212, 175, 55, 0.9); }
+      100% { box-shadow: 0 8px 0 #7c6520, 0 0 10px rgba(212, 175, 55, 0.4); }
+    }
+      70% { box-shadow: 0 8px 0 #7c6520, 0 0 0 18px rgba(212, 175, 55, 0); }
+      100% { box-shadow: 0 8px 0 #7c6520, 0 0 0 0 rgba(212, 175, 55, 0); }
+    }
+
+    .footer {
+      margin-top: 22px;
+      font-size: 12px;
+      opacity: 0.6;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="badge">ACESSO LIMITADO</div>
+
+    <div class="grupo-foto">
+      <!-- SUBSTITUA A IMAGEM ABAIXO PELA FOTO DO SEU GRUPO -->
+      <img src="Ofertasimperdiveis.png" alt="Foto do Grupo WhatsApp" />
+    </div>
+
+    <h1>Entre no nosso<span> Grupo VIP</span></h1>
+
+    <p>Ofertas relâmpago, achadinhos e promos que economizam o seu bolso!</p>
+
+    <div class="contador">
+      <small>Vagas liberadas por tempo limitado</small>
+      <div class="tempo" id="timer">10:00</div>
+    </div>
+
+    <!-- SUBSTITUA O LINK ABAIXO PELO LINK DO SEU GRUPO -->
+    <a href="https://chat.whatsapp.com/SEU-LINK-AQUI" class="btn">
+      🔥 ENTRAR AGORA NO GRUPO
+    </a>
+
+    <div class="footer">O melhor • grupo de ofertas!</div>
+  </div>
+
+  <script>
+    let tempo = 600; // 10 minutos
+
+    const timerEl = document.getElementById('timer');
+
+    function atualizarTimer() {
+      const minutos = Math.floor(tempo / 60);
+      const segundos = tempo % 60;
+
+      timerEl.textContent = `${String(minutos).padStart(2, '0')}:${String(segundos).padStart(2, '0')}`;
+
+      if (tempo > 0) {
+        tempo--;
+      } else {
+        tempo = 600; // reinicia para manter urgência
+      }
+    }
+
+    setInterval(atualizarTimer, 1000);
+    atualizarTimer();
+  </script>
+
+</body>
+</html>
